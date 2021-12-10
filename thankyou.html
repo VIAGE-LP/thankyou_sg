@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<!--
+	NOTES:
+	1. All tokens are represented by '$' sign in the template.
+	2. You can write your code only wherever mentioned.
+	3. All occurrences of existing tokens will be replaced by their appropriate values.
+	4. Blank lines will be removed automatically.
+	5. Remove unnecessary comments before creating your template.
+-->
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta name="authoring-tool" content="Adobe_Animate_CC">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+	<script src="../CommonFilesCrossing_TW2HK/js/jquery-3.3.1.min.js"></script>
+	<script src="../CommonFilesCrossing_TW2HK/js/jquery.cookie-1.4.1.min.js"></script>
+	<script src="../CommonFilesCrossing_TW2HK/thankyou/main.js?ver=20200407"></script>
+	<script>
+		// redirectGA();
+		redirectOrderInfo();
+	</script>
+	<!-- write your code here -->
+	<!-- <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+	<script src="gift_bra.js?1553852348708"></script> -->
+	<!-- <script>
+		var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+		function init() {
+			canvas = document.getElementById("canvas");
+			anim_container = document.getElementById("animation_container");
+			dom_overlay_container = document.getElementById("dom_overlay_container");
+			var comp = AdobeAn.getComposition("8EDFC5D318CA964EA03D852CB4A3D974");
+			var lib = comp.getLibrary();
+			var loader = new createjs.LoadQueue(false);
+			loader.addEventListener("fileload", function (evt) { handleFileLoad(evt, comp) });
+			loader.addEventListener("complete", function (evt) { handleComplete(evt, comp) });
+			var lib = comp.getLibrary();
+			loader.loadManifest(lib.properties.manifest);
+		}
+		function handleFileLoad(evt, comp) {
+			var images = comp.getImages();
+			if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }
+		}
+		function handleComplete(evt, comp) {
+			//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+			var lib = comp.getLibrary();
+			var ss = comp.getSpriteSheet();
+			var queue = evt.target;
+			var ssMetadata = lib.ssMetadata;
+			for (i = 0; i < ssMetadata.length; i++) {
+				ss[ssMetadata[i].name] = new createjs.SpriteSheet({ "images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames })
+			}
+			exportRoot = new lib.gift_box_內衣();
+			stage = new lib.Stage(canvas);
+			stage.enableMouseOver();
+			//Registers the "tick" event listener.
+			fnStartAnimation = function () {
+				stage.addChild(exportRoot);
+				createjs.Ticker.setFPS(lib.properties.fps);
+				createjs.Ticker.addEventListener("tick", stage);
+			}
+			//Code to support hidpi screens and responsive scaling.
+			function makeResponsive(isResp, respDim, isScale, scaleType) {
+				var lastW, lastH, lastS = 1;
+				window.addEventListener('resize', resizeCanvas);
+				resizeCanvas();
+				function resizeCanvas() {
+					var w = lib.properties.width, h = lib.properties.height;
+					var iw = window.innerWidth, ih = window.innerHeight;
+					var pRatio = window.devicePixelRatio || 1, xRatio = iw / w, yRatio = ih / h, sRatio = 1;
+					if (isResp) {
+						if ((respDim == 'width' && lastW == iw) || (respDim == 'height' && lastH == ih)) {
+							sRatio = lastS;
+						}
+						else if (!isScale) {
+							if (iw < w || ih < h)
+								sRatio = Math.min(xRatio, yRatio);
+						}
+						else if (scaleType == 1) {
+							sRatio = Math.min(xRatio, yRatio);
+						}
+						else if (scaleType == 2) {
+							sRatio = Math.max(xRatio, yRatio);
+						}
+					}
+					canvas.width = w * pRatio * sRatio;
+					canvas.height = h * pRatio * sRatio;
+					canvas.style.width = dom_overlay_container.style.width = anim_container.style.width = w * sRatio + 'px';
+					canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h * sRatio + 'px';
+					stage.scaleX = pRatio * sRatio;
+					stage.scaleY = pRatio * sRatio;
+					lastW = iw; lastH = ih; lastS = sRatio;
+					stage.tickOnUpdate = false;
+					stage.update();
+					stage.tickOnUpdate = true;
+				}
+			}
+			makeResponsive(false, 'both', false, 1);
+			AdobeAn.compositionLoaded(lib.properties.id);
+			fnStartAnimation();
+		}
+	</script> -->
+	<!-- write your code here -->
+
+	<style type="text/css">
+		/*////// 使用しなかった既存CSS //////*/
+
+		/*未訪問のリンク*/
+		/*a:link {
+	color:#FF6699;
+	text-decoration:none;
+}*/
+
+		/*訪問後のリンク*/
+		/*a:visited {
+	color:#FF6699;
+	text-decoration:none;
+}*/
+
+		/*マウスをのせたとき*/
+		/*a:hover {
+	color:#FF6699;
+	text-decoration:underline;
+}*/
+
+		/*body{
+	font-family:'SimSun','MS UI Gothic','Hei','sans-serif';
+	width:560px;
+	margin-top:30;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:0px;
+	}	
+div{
+	width:560px;
+	margin-top:30px;
+	margin-bottom:0px;
+	padding-bottom:0px;
+	margin-right:auto;
+	margin-bottom:0px;
+	text-align:center;
+	}
+.head{
+	width:100%;
+	text-align:center;
+	background-color:#63a8cf;
+	margin-left:auto;
+	margin-right:auto;
+	
+}
+.head02{
+	width:100%;
+	text-align:center;
+	background-color:#59b0e3;
+	margin-left:auto;
+	margin-right:auto;
+	
+}*/
+		/*////// 使用しなかった既存CSSここまで //////*/
+
+		img {
+			border: none;
+			margin: 0px;
+		}
+
+		/* 追記・変更箇所ここから */
+		p,
+		div {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			font-family: "思源黑體 TW Regular", "Microsoft JhengHei UI";
+			/*font-family : 'SimSun','MS UI Gothic','Hei','sans-serif';*/
+			/* ←こちらをしていしてもゴシック体にならなかった為、一応コメントアウトで残しております。 */
+			background-image: url(images/bg_confetti.png);
+			background-repeat: repeat-x;
+			width: 100%;
+			font-size: 16px;
+		}
+
+		a:link,
+		a:visited {
+			color: #2747C9;
+			text-decoration: none;
+		}
+
+		a:link:hover,
+		a[href]:hover {
+			color: #F01014;
+			text-decoration: underline;
+		}
+
+		.container {
+			text-align: center;
+			background-color: #fff;
+			padding-bottom: 150px;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			width: 100%;
+			max-width: 598px;
+			margin: 50px auto;
+			height: 100%;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			box-shadow: rgba(0, 0, 0, 0.180392) 0px 0px 7px 0px;
+			-webkit-box-shadow: rgba(0, 0, 0, 0.180392) 0px 0px 7px 0px;
+			-moz-box-shadow: rgba(0, 0, 0, 0.180392) 0px 0px 7px 0px;
+		}
+
+		.pageTitle {
+			margin: 30px 0 20px 0;
+		}
+
+		.subtitle {}
+
+		.contents {
+			margin-bottom: 40px;
+		}
+
+		.inform {
+			text-align: left;
+			padding: 0 5%;
+			color: #F01014;
+		}
+
+		.inform ul {
+			padding: 5% 10%;
+			background: rgba(0, 0, 0, 0.05);
+			list-style-type: square;
+		}
+
+		.tx1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+
+		.tx2 {
+			line-height: 24px;
+			margin-bottom: 20px;
+		}
+
+		.tx3 {
+			text-align: left;
+			padding: 0 5%;
+			color: #464646;
+		}
+
+		.red {
+			color: #F01014;
+		}
+
+		.blue {
+			color: #122A8A;
+		}
+
+		.small {
+			font-size: 14px;
+		}
+
+		.foot {
+			color: #121212;
+			padding: 0 5%;
+		}
+
+		.footTitle {
+			font-weight: bold;
+			text-align: left;
+			line-height: 24px;
+		}
+
+		.footContents {
+			font-size: 14px;
+			text-align: left;
+		}
+
+		.footContact {
+			width: 50%;
+			float: left;
+		}
+
+		.footSocial {
+			padding-top: 5px;
+			width: 50%;
+			float: right;
+			text-align: right;
+			font-size: 14px;
+		}
+
+		.footContactR {
+			float: right;
+		}
+
+		.homeBtn a {
+			margin: 40px auto 0 auto;
+			display: block;
+			width: 150px;
+			color: #000;
+			background-color: #ddd;
+			text-align: center;
+			text-decoration: none;
+			padding: 15px 0;
+		}
+
+		.homeBtn a span.homeIcon {
+			width: 18px;
+			height: 16px;
+			background-image: url(images/ic_home.png);
+			background-size: 18px 16px;
+			display: inline-block;
+			text-indent: -9999px;
+			vertical-align: middle;
+			margin: 0 5px 5px 0;
+		}
+
+		.homeBtn a:hover {
+			color: #666;
+			background-color: #eee;
+		}
+
+		.homeBtn a:hover span.homeIcon {
+			background-image: url(images/ic_home_hover.png);
+		}
+
+		.order {
+			display: none;
+		}
+		img.finger{
+			position: absolute; 
+			width:20%;
+			right: 17%;
+			top: 37%;
+		}
+
+		@media all and (max-width: 768px) {
+			body {
+				margin: 0 0 10% 0;
+			}
+
+			.container {
+				width: 95%;
+				max-width: none;
+				margin: 25px auto;
+				padding-bottom: 30vh;
+			}
+
+			#animation_container {
+				display: none;
+			}
+
+			.order {
+				display: block;
+			}
+
+			img.finger{
+				right: 4%;
+			}
+		}
+	</style>
+	<!-- Google Tag Manager -->
+	<script>(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-PZC4KG2');</script>
+	<!-- End Google Tag Manager -->
+	<!-- LINE Tag Base Code -->
+	<!-- Do Not Modify -->
+	<script>
+		(function (g, d, o) {
+			g._ltq = g._ltq || []; g._lt = g._lt || function () { g._ltq.push(arguments) };
+			var h = location.protocol === 'https:' ? 'https://d.line-scdn.net' : 'http://d.line-cdn.net';
+			var s = d.createElement('script'); s.async = 1;
+			s.src = o || h + '/n/line_tag/public/release/v1/lt.js';
+			var t = d.getElementsByTagName('script')[0]; t.parentNode.insertBefore(s, t);
+		})(window, document);
+		_lt('init', {
+			customerType: 'lap',
+			tagId: 'e913f495-946d-4c9a-b989-29d6bee39e24'
+		});
+		_lt('send', 'pv', ['e913f495-946d-4c9a-b989-29d6bee39e24']);
+	</script>
+	<noscript>
+		<img height="1" width="1" style="display:none"
+			src="https://tr.line.me/tag.gif?c_t=lap&t_id=e913f495-946d-4c9a-b989-29d6bee39e24&e=pv&noscript=1" />
+	</noscript>
+	<!-- End LINE Tag Base Code -->
+
+	<script>
+		_lt('send', 'cv', {
+			type: 'Conversion'
+		}, ['e913f495-946d-4c9a-b989-29d6bee39e24']);
+	</script>
+
+	<!-- redmine #45205 -->
+	<!-- Google Tag Manager -->
+	<script>(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-5WX3NND');</script>
+	<!-- End Google Tag Manager -->
+
+</head>
+
+<body onload="init();" style="margin:0px;">
+	<!-- redmine #45205 -->
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WX3NND" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+
+	<!-- 偵測CV -->
+	<script>
+		window.__letroUgcGadget = window.__letroUgcGadget || {};
+		__letroUgcGadget.advertiser_id = 239;
+		(function (d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "https://letro.jp/tags/js/letro.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'letro-jssdk'));
+	</script>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZC4KG2" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+	<!-- CV tag -->
+	<script src="https://resultplus.jp/ac/fpc_action.js" id="resultplus-ac"></script>
+	<script>
+		(function () {
+			var currentURL = new URL(window.location.href);
+			var url_parem = {
+				order_id: currentURL.searchParams.get("order_id"),
+				payment_total: currentURL.searchParams.get("payment_total")
+			}
+			var itpAction = new ResultplusItpAction('resultplus-ac');
+			var clid = 587;
+			var uid = url_parem.order_id;
+			var pid = 1;
+			var amount = url_parem.payment_total;
+			var item = '';
+			var ac_type = 2;
+			itpAction.actionCL(clid, uid, pid, amount, item, ac_type);
+		})();
+	</script>
+	<!-- End CV tag -->
+
+	<!-- 20200708 聯盟網 -->
+	<!-- <script type="text/javascript">
+		if (getJsonFromUrl().lp_param_ga1 == 'affiliates') {
+			(function () {
+				var VARemoteLoadOptions = {
+					whiteLabel: { id: 8, siteId: 1867, domain: 'vbtrax.com' },
+					conversion: true,
+					conversionData: {
+						step: 'sale', // conversion name
+						// revenue: '置入CPA 金額/分潤金額', // revenue share
+						orderTotal: getJsonFromUrl().payment_total, // order total
+						order: getJsonFromUrl().order_id, // order number
+					},
+					locale: "en-US", mkt: true
+				};
+				(function (c, o, n, v, e, r, l, y) {
+					c['VARemoteLoadOptions'] = e; r = o.createElement(n), l = o.getElementsByTagName(n)[0];
+					r.async = 1; r.src = v; l.parentNode.insertBefore(r, l);
+				})(window, document, 'script', 'https://cdn.vbtrax.com/javascripts/va.js', VARemoteLoadOptions);
+			})();
+		}
+	</script> -->
+	<div class="container">
+		<div class="pageTitle"><img src="images/title.png" width="320" height="92" title="購物完成" /></div>
+		<div class="subtitle">
+			<p class="tx1" style="line-height:32px;
+	margin-bottom:10px;font-family: 'Noto Serif TC', serif;"><span
+					class="blue">非常感謝您的購買！<br>我們會盡快安排出貨給您，<br>並期待您下次的光臨！</span></p>
+		</div>
+		<div class="main_photo " style="position: relative;">
+			<a href="https://docs.google.com/forms/d/e/1FAIpQLScR70XP514GuI6dnSmkAewF66RSfu9U9UEKKLFikGzx5_o98A/viewform?usp=sf_link" target="blank">
+				<img src="images/question_btn.png" alt="" class="animate__animated animate__pulse animate__infinite">
+				<!-- <img src="images/finger.png" alt="" class="finger animate__animated animate__flash animate__infinite"> -->
+			</a>
+		</div>
+		<div class="main_text" style="padding-top:5%">
+			<p style="color:#885C91;font-size:1.5rem;">讓「<span style="color:#cf76a2">Viage晚安立體美型內衣</span>」</p>
+			<p style="color:#885C91;font-size:1.5rem;">應援你的美麗生活</p>
+		</div>
+		<img src="images/flower.jpg" style="width:100%;" alt="">
+
+		<div class="contents">
+			<p class="tx3" style="padding-top: 30px;">
+				我們已經以電子郵件的方式寄出了您本次的訂購明細，還請您確認一下。<br>
+				商品將於您收到「出貨通知」EMAIL後，最快2個工作天可送至您手上。<br>
+				到貨當日，請務必確認有人可以收貨。<br>
+			</p>
+			<div class="inform">
+				<ul>
+					<li>本網站為台灣境內網站，遵守台灣地區法律之規定。本商品屬個人衛生用品，除台灣消保法第十九條第一項所稱合理例外情事，個人衛生用品不適用於七天猶豫期之規定，恕無法受理因個人因素之退換貨，敬請見諒。尺寸問題請您提前咨詢客服。
+					</li>
+
+				</ul>
+			</div>
+			<p class="red" style="margin-bottom: 20px;">以上內容還請您詳細閱讀，如造成不便，敬請見諒。</p>
+			<p class="tx3">「Viage」在日文中有「無論幾歲都能保持美麗自信」的涵義在。
+				我們將這樣的想法灌注在這款晚安立體美型內衣中，希望不只能在輕鬆舒適的睡眠中解決女性對胸部的各種煩惱，也能幫助大家在日常生活中一步步以理想美胸為目標，為生活點綴上不同的繽紛色彩！
+
+
+			</p>
+		</div>
+
+		<!--/* Foot */-->
+		<div class="foot">
+
+			<hr>
+			<div class="footContact">
+				<!-- <p class="footTitle">台灣娜珂黛肌</p> -->
+				<p class="footContents" style="line-height: 14px; margin-bottom: 6px;">傾聽您的需求，應援您的健康生活</p>
+				<p class="footContents">
+					TEL：<a href="tel:+886-2-2321-1502" data-content="+886-2-2321-1502">+886-2-2321-1501</a><br>
+					E-mail：<a href="mailto:support@viagebeautybra.com">support@viagebeautybra.com</a>
+					<br>
+					週一至週五 11:00-18:00​ (國定例假日除外)
+				</p>
+			</div>
+			<div class="footContactR">
+				<table border="0" cellspacing="0" cellpadding="5">
+					<tbody>
+						<tr>
+							<td><a href="https://www.facebook.com/Viage.sg" target="_blank"><img
+										src="images/icon_fb.png" height="40px"></a></td>
+							<td><a href="https://www.instagram.com/viage_tw/?hl=zh-tw" target="_blank"><img
+										src="images/icon_ig.png" height="40px"></a></td>
+						</tr>
+					</tbody>
+				</table>
+
+
+			</div>
+
+		</div>
+	</div>
+	<!-- <script src="js/bootstrap.min.js"></script> -->
+</body>
+
+</html>
