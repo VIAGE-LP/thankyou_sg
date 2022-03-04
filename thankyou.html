@@ -10,6 +10,9 @@
 <html>
 
 <head>
+	    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta http-equiv="Content-Script-Type" content="text/javascript" />
 	<meta http-equiv="Content-Style-Type" content="text/css" />
@@ -213,10 +216,8 @@ div{
 		}
 
 		.pageTitle {
-			margin: 30px 0 20px 0;
+			margin: 8px 0 0 0;
 		}
-
-		.subtitle {}
 
 		.contents {
 			margin-bottom: 40px;
@@ -476,10 +477,11 @@ div{
 	</script> -->
 	<div class="container">
 		<div class="pageTitle"><img src="images/title.png" width="320" height="92" title="購物完成" /></div>
+		<img id="Mypage_link" src="images/Mypage_link.png" alt="" style="width:30%;cursor: pointer;">
 		<div class="subtitle">
-			<p class="tx1" style="line-height:32px;
-	margin-bottom:10px;font-family: 'Noto Serif TC', serif;"><span
-					class="blue">非常感謝您的購買！<br>我們會盡快安排出貨給您，<br>並期待您下次的光臨！</span></p>
+			<p class="tx1" style="line-height:32px;margin-bottom:10px;font-family: 'Noto Serif TC', serif;">
+				<span class="blue">非常感謝您的購買！<br>我們會盡快安排出貨給您，<br>並期待您下次的光臨！</span>
+			</p>
 		</div>
 		<div class="main_photo " style="position: relative;">
 			<a href="https://docs.google.com/forms/d/e/1FAIpQLScR70XP514GuI6dnSmkAewF66RSfu9U9UEKKLFikGzx5_o98A/viewform?usp=sf_link"
@@ -546,7 +548,68 @@ div{
 
 		</div>
 	</div>
-	<!-- <script src="js/bootstrap.min.js"></script> -->
+	<!-- Mypage start -->
+    <script>
+        (async () => {
+            //遠端API撈回來的資料(訂單建立後30分鐘失效，order_token每次造訪都會改變，order_id要同一個ip)
+            let a = await fetch(`https://asp.acs-tpkg.com/orderinfo?account_id=2021110001&orderKey=${getJsonFromUrl().orderKey}`);
+            let remoteData = await a.json();
+            let remote_error = remoteData.error;
+
+            //本地端localStorage裡的資料
+            let localData = JSON.parse(localStorage.getItem('orderData'));
+
+            //比對遠端與本地資料中的data
+            const compare_data = (remoteData, localData) => {
+                if ((!remoteData)|| (remoteData && Object.keys(remoteData).length === 0)||(remote_error)) {
+                    return
+                } else {
+                    if ((!localData) || (localData && Object.keys(localData).length === 0)) {
+                        //如果本地為空，執行寫入整包remoteData資料到localstorage
+                        localStorage.setItem('orderData', JSON.stringify(remoteData));
+                        return
+                    } else {
+                        const list = Object.keys(remoteData.data);
+                        let the_same = true;
+                        list.forEach(item => {
+                            if (item === "products") {
+                                return
+                            }
+                            if (remoteData.data[item] !== localData.data[item]) {
+                                the_same = false;
+                            }
+                        })
+                        if (!the_same) {
+                            //如果遠端資料與本地端不同，執行寫入整包remoteData資料到localstorage
+                            localStorage.setItem('orderData', JSON.stringify(remoteData));
+                            return
+                        } else {
+                            return
+                        }
+                    }
+                }
+            }
+            compare_data(remoteData, localData)
+        })();
+        //點選查詢訂單按鈕
+		var width = $(window).width();
+        if ((width <= 768)) {
+            $("#Mypage_link").attr("style", style = "width:38%;");
+        }
+        $("#Mypage_link").click(function (e) {
+            e.preventDefault();
+            // 從localStorage取出order_token
+            let orderToken = JSON.parse(localStorage.getItem('orderData'));
+            if (!orderToken) {
+                return;
+            } else {
+                orderToken = orderToken.order_token;
+                // 用order_token去開Mypage
+                window.open(`https://viagebeautybra.com/Mypage_sg/?type=10&order_token=${orderToken}`);
+            }
+        });
+    </script>
+    <!-- Mypage End -->
 </body>
 
 </html>
